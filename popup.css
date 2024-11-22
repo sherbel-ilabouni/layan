@@ -11,7 +11,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
+    display: block;
     justify-content: center;
     background-color: aqua;
     align-items: center;
@@ -19,12 +19,17 @@ body {
 }
 
 .layan {
-    display: grid;
+    display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-left: 15%;
     margin-bottom: 150px;
+    width: 300px;
     margin-top: 40px;
+    background: rgb(0, 0, 0,.5);
+    color: rgb(255, 255, 255);
+text-shadow: 4px 4px 4px rgb(0, 0, 255,5);
 }
 
 .layan h1 {
@@ -70,7 +75,7 @@ button {
     border-radius: 10px;
     max-width: 90%;
     width: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 10px 10px rgb(0, 255, 255,.4);
     position: relative;
 }
 
