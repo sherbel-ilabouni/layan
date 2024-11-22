@@ -27,9 +27,9 @@ body {
     margin-bottom: 150px;
     width: 300px;
     margin-top: 40px;
-    background: rgb(0, 0, 0,.5);
+    background: rgb(0, 0, 0, .5);
     color: rgb(255, 255, 255);
-text-shadow: 4px 4px 4px rgb(0, 0, 255,5);
+    text-shadow: 4px 4px 4px rgb(0, 0, 255, 5);
 }
 
 .layan h1 {
@@ -75,7 +75,7 @@ button {
     border-radius: 10px;
     max-width: 90%;
     width: 100%;
-    box-shadow: 5px 10px 10px rgb(0, 255, 255,.4);
+    box-shadow: 5px 10px 10px rgb(0, 255, 255, .4);
     position: relative;
 }
 
