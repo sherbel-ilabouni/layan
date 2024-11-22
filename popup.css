@@ -6,7 +6,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    display: block;
+    background-image: url('./img.jpg');
+    /* עדכן לפי שם הקובץ והתיקייה */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
     justify-content: center;
     background-color: aqua;
     align-items: center;
