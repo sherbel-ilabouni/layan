@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>رسالة اعتذار من القلب</title>
+    <style>
+        /* כל הסגנונות הקודמים נשארים זהים */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* שינוי לסידור אנכי */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            /* מרווח בין האלמנטים */
+        }
+
+        .container {
+            /* שאר הסגנונות נשארים זהים */
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* כל הסגנונות האחרים נשארים זהים */
+
+        .back-button {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #e74c3c;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            /* שינוי מ-block ל-inline-block */
+            margin: 20px auto;
+            /* מרכוז אופקי */
+            z-index: 100;
+            text-align: center;
+            /* מרכוז הטקסט */
+            width: auto;
+            /* רוחב אוטומטי לפי התוכן */
+        }
+
+        .back-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            background: #e74c3c;
+            color: white;
+        }
+
+        .back-button:active {
+            transform: translateY(1px);
+        }
+
+        .back-button::before {
+            content: '←';
+            margin-left: 10px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover::before {
+            transform: translateX(-5px);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 140%;
+            }
+
+            .message {
+                font-size: 270%;
+            }
+
+            .special-text {
+                font-size: 3rem;
+            }
+
+            .love-button {
+                font-size: 2.4rem;
+            }
+
+            .back-button {
+                font-size: 2.4rem;
+                padding: 20px 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- תוכן הדף נשאר זהה -->
+    <div class="container" id="messageContainer">
+        <div class="flowers top-right">🌸</div>
+        <div class="flowers bottom-left">🌸</div>
+
+        <h1>حبيبتي الغالية</h1>
+
+        <div class="message">
+            <p>أنا آسف جداً على كل ما حدث</p>
+            <p>أعلم أنني أخطأت، وأريد أن أصلح كل شيء</p>
+            <p>أنتِ أغلى ما في حياتي، وسعادتك هي كل ما يهمني</p>
+            <br>
+            <p>أرجوكِ سامحيني، وامنحيني فرصة لأثبت لكِ حبي من جديد</p>
+        </div>
+
+        <div class="special-text">
+            أحبك من كل قلبي ❤️
+        </div>
+
+        <button class="love-button back-button" onclick="showMoreLove()">انقري هنا اكثر من مره</button>
+    </div>
+
+    <!-- הסקריפט נשאר זהה -->
+    <a href="index.html" class="back-button ">الرجوع للصفحة الرئيسية</a>
+
+    <!-- הסקריפט נשאר זהה -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤️';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        function showMoreLove() {
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createHeart();
+                }, i * 100);
+            }
+
+            const messages = [
+                "أنتِ حياتي كلها ❤️",
+                "لا أستطيع العيش بدونك 💕",
+                "سامحيني يا أجمل ما في الكون 💝",
+                "أحبك أكثر من أي شيء 💖"
+            ];
+
+            const newMessage = document.createElement('p');
+            newMessage.className = 'special-text';
+            newMessage.style.animation = 'pulse 1s';
+            newMessage.textContent = messages[Math.floor(Math.random() * messages.length)];
+            document.querySelector('.message').appendChild(newMessage);
+        }
+
+        setInterval(createHeart, 3000);
+    </script>
+</body>
+
+</html>

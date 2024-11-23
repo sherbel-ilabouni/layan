@@ -1,57 +1,251 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ليان </title>
-    <link rel="stylesheet" href="popup.css">
-    <script src="popup.js" defer></script>
+    <title>ليان</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            /* הגדלת המרווח בין הכפתורים */
+        }
+
+        .button {
+            padding: 25px;
+            /* פדינג גדול יותר */
+            font-size: 1.3em;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            /* מרווח גדול יותר בין האייקון לטקסט */
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .education {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+        }
+
+        .love {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+
+        .mood {
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+        }
+
+        .emoji {
+            font-size: 1.8em;
+            /* אימוג'י גדול יותר */
+        }
+
+        .decoration {
+            position: fixed;
+            font-size: 3em;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+        .bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        /* שיפורים לתצוגת מובייל */
+        @media (max-width: 900px) {
+            .container {
+                padding: 30px;
+                width: 95%;
+                /* רוחב גדול יותר במובייל */
+            }
+
+            h1 {
+                font-size: 3.2rem;
+                /* כותרת גדולה יותר */
+                margin-bottom: 50px;
+            }
+
+            .buttons-container {
+                gap: 40px;
+                /* מרווח גדול יותר בין הכפתורים */
+            }
+
+            .button {
+                padding: 30px 20px;
+                /* פדינג גדול יותר */
+                font-size: 2.5rem !important;
+                /* טקסט גדול יותר */
+                border-radius: 20px;
+                /* פינות מעוגלות יותר */
+            }
+
+            .emoji {
+                font-size: 3rem;
+                /* אימוג'י גדול יותר במובייל */
+            }
+
+            /* הגדלת הדקורציות במובייל */
+            .decoration {
+                font-size: 4em;
+            }
+        }
+
+        /* התאמות נוספות למסכים קטנים יותר */
+        @media (max-width: 480px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .button {
+                padding: 25px 15px;
+                font-size: 2.2rem !important;
+            }
+
+            .emoji {
+                font-size: 2.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="layan">
+    <span class="decoration top-right">✨</span>
+    <span class="decoration bottom-left">🌟</span>
+    <span class="decoration top-left">💫</span>
 
-        <h1>اسف حبيبتي</h1>
-        <p>حبيبتي ليان</p>
+    <div class="container">
+        <h1>أهلاً وسهلاً ليان</h1>
 
-    </div>
-    <button> اكبسيني</button>
-    <div id="popupWrapper" class="Wrapper">
-        <div class="popup">
-            <div class="popupClose">X</div>
-            <div class="popupContent">
-                <h1>صباح النور يا غاليتي 🌞</h1>
-                <p>صباح الخير يا ليان،<br>
-                بحبك من كل قلبي، وبتمنى إنك تصحي اليوم على ابتسامة تملأ وجهك الجميل. بعتذر عن أي كلمة أو موقف خلّاكِ تنامي زعلانة،
-                وصدقيني هذا آخر شيء ممكن أتمناه. إنتِ النور اللي بيضيء يومي، وما في شي بالدنيا يستاهل إنك تكوني حزينة بسببه.
-                سامحيني عشان خطأي، وخلينا نبدأ اليوم بطاقة حب وأمل. بحبك قد البحر، وقد السما، وقد الكون كله. ❤️</p>
-                <a href="https://www.youtube.com/watch?v=DWzI21VOlzw">اكبسيني</a>
+        <div class="buttons-container">
+            <a href="layan.html" class="button education">
+                للغالية على قلبي
+                <span class="emoji">🌸</span>
+            </a>
 
+            <a href="love-apology.html" class="button love">
+                رسالة من القلب
+                <span class="emoji">❤️</span>
+            </a>
 
-            </div>
-        </div>
-    </div><br><br>
-    <!--  <button> اكبسيني2</button>
-    <div id="popupWrapper" class="Wrapper">
-        <div class="popup">
-            <div class="popupClose">X</div>
-            <div class="popupContent">
-                <h1>صباح النور يا غاليتي 🌞</h1>
-                <p>أحببت أن أبدأ صباحي برسالة لكِ، تذكير صغير بمدى حبّي وامتناني لوجودكِ في حياتي. أنتِ أجمل هدية منحني
-                    إياها القدر، ونور
-                    يضيء دربي كل يوم.
-
-                    أتمنى أن يكون هذا اليوم مليئاً بالراحة والابتسامات، وأن تحققي فيه كل ما تطمحين إليه. تذكري دائماً
-                    أنكِ تستحقين كل
-                    السعادة في العالم، وأني دائماً هنا بجانبك، داعماً ومحباً.
-
-                    صباحكِ ورد وياسمين يا حبيبتي 💐</p>
-                <a href="https://www.youtube.com/watch?v=ZkFmamFoRlA">اكبسيني</a>
-            </div>
+            <a href="mood-lifter.html" class="button mood">
+                رسالة لتحسين المزاج
+                <span class="emoji">✨</span>
+            </a>
         </div>
     </div>
- -->
+
+    <script>
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('mouseover', function () {
+                this.style.transform = 'translateY(-5px)';
+                this.querySelector('.emoji').style.transform = 'scale(1.2)';
+            });
+
+            button.addEventListener('mouseout', function () {
+                this.style.transform = 'translateY(0)';
+                this.querySelector('.emoji').style.transform = 'scale(1)';
+            });
+
+            button.addEventListener('click', function () {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+        });
+    </script>
 </body>
 
 </html>
